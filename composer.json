@@ -1,0 +1,25 @@
+{
+  "name": "jhyeon1010/twitter",
+  "description": "Support Twitter API v1.1 for PHP",
+  "keywords": [
+    "twitter",
+    "PHP"
+  ],
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jeong-hyeon Jo",
+      "email": "jhyeon1010@naver.com",
+      "homepage": "https://github.com/jhyeon1010"
+    }
+  ],
+  "require": {
+    "j7mbo/twitter-api-php": "~1.0.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jhyeon1010\\Twitter\\": "src/"
+    }
+  }
+}
