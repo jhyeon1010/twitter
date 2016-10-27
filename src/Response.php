@@ -20,12 +20,18 @@ class Response
 
     protected $body;
 
+    protected $statusCode;
+
+    protected $headers;
+
     protected $decodedBody;
 
-    public function __construct(Request $request, $body)
+    public function __construct(Request $request, $body, $statusCode, array $headers)
     {
         $this->request = $request;
         $this->body = $body;
+        $this->statusCode = $statusCode;
+        $this->headers = $headers;
 
         $this->decodedBody = json_decode($this->body, true);
     }
@@ -37,11 +43,21 @@ class Response
 
     public function getBody()
     {
+        return $this->body;
+    }
+
+    public function getDecodedBody()
+    {
         return $this->decodedBody;
     }
 
-    public function getRawBody()
+    public function getHttpStatusCode()
     {
-        return $this->body;
+        return $this->statusCode;
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
     }
 }
